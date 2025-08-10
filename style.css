@@ -1,0 +1,84 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Figtree', sans-serif;
+    min-height: 100vh; /* Use min-height instead of height */
+    margin: 0;
+    background-color: hsl(47, 88%, 63%);
+    padding: clamp(1rem, 5vw, 2rem); /* Responsive padding */
+}
+
+.card-container {
+    /* Better responsive width */
+    width: clamp(280px, 90%, 384px);
+    
+    /* Remove redundant height clamp */
+    /* min-height: auto; - let content determine height */
+    
+    display: flex;
+    flex-direction: column;
+    border-radius: clamp(10px, 2vw, 20px); /* Responsive border radius */
+    box-shadow: clamp(4px, 1vw, 8px) clamp(4px, 1vw, 8px) 0 hsl(0, 0%, 7%);
+    padding: clamp(1rem, 4vw, 1.5rem); /* Responsive padding */
+    background-color: white;
+    border: 1px solid hsl(0, 0%, 7%);
+}
+
+/* Responsive typography */
+.container-title-text {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+    line-height: 1.3;
+    margin: clamp(0.5rem, 2vw, 1rem) 0;
+    font-weight: 800;
+}
+
+/* Responsive image */
+#card-image {
+    width: 100%;
+    height: auto;
+    border-radius: clamp(8px, 2vw, 12px);
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+}
+
+/* Responsive tag */
+#learning-tag {
+    padding: clamp(0.25rem, 1vw, 0.5rem) clamp(0.5rem, 2vw, 0.75rem);
+    margin: clamp(0.75rem, 2vw, 1rem) 0;
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    font-weight: 800;
+    /* ... other styles ... */
+}
+
+/* Responsive author section */
+#subtitle-text {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.5rem, 2vw, 0.75rem);
+    margin-top: clamp(1rem, 3vw, 1.5rem);
+}
+
+.author-image-favicon {
+    width: clamp(28px, 6vw, 32px);
+    height: clamp(28px, 6vw, 32px);
+    border-radius: 50%;
+}
+
+/* Media queries for extreme cases */
+@media (max-width: 320px) {
+    body {
+        padding: 0.5rem;
+    }
+    
+    .card-container {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .card-container:hover {
+        transform: translateY(-2px);
+        transition: transform 0.2s ease;
+    }
+}
